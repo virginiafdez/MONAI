@@ -198,8 +198,9 @@ class DDIMScheduler(Scheduler):
 
         # 4. Clip "predicted x_0"
         if self.clip_sample:
-            pred_original_sample = torch.clamp(pred_original_sample,self.clip_sample_values[0],
-                                               self.clip_sample_values[1])
+            pred_original_sample = torch.clamp(
+                pred_original_sample, self.clip_sample_values[0], self.clip_sample_values[1]
+            )
 
         # 5. compute variance: "sigma_t(η)" -> see formula (16)
         # σ_t = sqrt((1 − α_t−1)/(1 − α_t)) * sqrt(1 − α_t/α_t−1)
@@ -272,8 +273,9 @@ class DDIMScheduler(Scheduler):
 
         # 4. Clip "predicted x_0"
         if self.clip_sample:
-            pred_original_sample = torch.clamp(pred_original_sample, self.clip_sample_values[0],
-                                               self.clip_sample_values[1])
+            pred_original_sample = torch.clamp(
+                pred_original_sample, self.clip_sample_values[0], self.clip_sample_values[1]
+            )
 
         # 5. compute "direction pointing to x_t" of formula (12) from https://arxiv.org/pdf/2010.02502.pdf
         pred_sample_direction = (1 - alpha_prod_t_prev) ** (0.5) * pred_epsilon

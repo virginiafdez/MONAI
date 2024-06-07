@@ -224,8 +224,9 @@ class DDPMScheduler(Scheduler):
 
         # 3. Clip "predicted x_0"
         if self.clip_sample:
-            pred_original_sample = torch.clamp(pred_original_sample, self.clip_sample_values[0],
-                                               self.clip_sample_values[1])
+            pred_original_sample = torch.clamp(
+                pred_original_sample, self.clip_sample_values[0], self.clip_sample_values[1]
+            )
 
         # 4. Compute coefficients for pred_original_sample x_0 and current sample x_t
         # See formula (7) from https://arxiv.org/pdf/2006.11239.pdf
