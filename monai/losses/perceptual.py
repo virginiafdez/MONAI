@@ -49,9 +49,9 @@ class PerceptualLoss(nn.Module):
 
     Args:
         spatial_dims: number of spatial dimensions.
-        network_type: {``"alex"``, ``"vgg"``, ``"squeeze"``, ``"radimagenet_resnet50"``,
-        ``"medicalnet_resnet10_23datasets"``, ``"medicalnet_resnet50_23datasets"``, ``"resnet50"``}
-            Specifies the network architecture to use. Defaults to ``"alex"``.
+        network_type: specifies the network architecture to use. Defaults to ``"alex"``.
+        Can be:``"alex"``, ``"vgg"``, ``"squeeze"``,
+        ``"radimagenet_resnet50"``, ``"medicalnet_resnet10_23datasets"``, ``"medicalnet_resnet50_23datasets"``, ``"resnet50"``.
         is_fake_3d: if True use 2.5D approach for a 3D perceptual loss.
         fake_3d_ratio: ratio of how many slices per axis are used in the 2.5D approach.
         cache_dir: path to cache directory to save the pretrained network weights.
